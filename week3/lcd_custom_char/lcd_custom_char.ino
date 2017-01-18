@@ -45,15 +45,15 @@ byte smiley[8] = {
 void setup() {
   lcd.createChar(0, heart);
   lcd.createChar(1, smiley);
-  lcd.begin(16, 2); 
+  lcd.begin(20, 4); 
 
   lcd.setCursor(0, 0);
   lcd.print("I");
-  lcd.setCursor(1, 0);
-  lcd.write(byte(0));
   lcd.setCursor(2, 0);
+  lcd.write(byte(0));
+  lcd.setCursor(4, 0);
   lcd.write("Arduino!");
-  lcd.setCursor(10, 0);
+  lcd.setCursor(11, 0);
   lcd.write(byte(1));
 }
 
