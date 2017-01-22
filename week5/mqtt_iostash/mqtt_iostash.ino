@@ -2,6 +2,15 @@
 #include <PubSubClient.h>
 #include "DHT.h"
 
+/**
+ * DTH sensor circuit
+ * Sensor Pin  ->  NodeMCU Pin
+ * Pin1        ->  3v3
+ * Pin2        ->  D2
+ * Pin3        -> (Not connect)
+ * Pin4        -> GND
+ */
+
 #define DHTTYPE DHT22               // White color. If blue color DHT11
 #define DHTPIN  2                   // GPIO2 => Pin D2 on NodeMCU Mesos board
 #define SLEEP_DELAY_IN_SECONDS  30

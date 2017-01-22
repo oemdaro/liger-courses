@@ -8,9 +8,18 @@ const char* ssid = "YourSSID";
 const char* password = "WiFiPassword";
 const char* server = "api.thingspeak.com";
 
+/**
+ * DTH sensor circuit
+ * Sensor Pin  ->  NodeMCU Pin
+ * Pin1        ->  3v3
+ * Pin2        ->  D2
+ * Pin3        -> (Not connect)
+ * Pin4        -> GND
+ */
+
 //Define the PIN for the Sensor
-#define DHTPIN 2
-#define DHTTYPE DHT11 
+#define DHTPIN 2        // GPIO2 => Pin D2 on NodeMCU Mesos board
+#define DHTTYPE DHT11   // DTH11 for blue and DTH22 for white color
 
 DHT dht(DHTPIN, DHTTYPE,11);
 WiFiClient client;
