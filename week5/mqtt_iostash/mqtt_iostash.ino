@@ -1,24 +1,27 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
-#include <DHT.h>
+#include "DHT.h"
 
-#define DHTTYPE DHT11
-#define DHTPIN  2
+#define DHTTYPE DHT22               // White color. If blue color DHT11
+#define DHTPIN  2                   // GPIO2 => Pin D2 on NodeMCU Mesos board
 #define SLEEP_DELAY_IN_SECONDS  30
 
 unsigned long previousMillis = 0; 
 const long interval = 2000; 
-const char* ssid = "your wifi SSID here";
-const char* password = "your wifi password here";
+const char* ssid = "WiFi_Name";           // Put your WiFi name here
+const char* password = "WiFi_Password";   // Put your WiFi password here
 float humidity, temp_f;
 const char* mqtt_server = "api.iostash.io";
-const char* mqtt_username = "put your X-ACCESS-TOKEN here";
-const char* mqtt_password = "put your Device Secret here";
+// e.g. const char* mqtt_username = "5992d40a782251261701492a";
+const char* mqtt_username = "X-Access-Token";
+// e.g. const char* mqtt_password = "14071992";
+const char* mqtt_password = "Device Secret";
+// e.g. const char* mqtt_topic = "/5992d40a782251261701492a/25510c497a4415167502503f/";
 const char* mqtt_topic = "/X-Access-Token/DeviceID/";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
-DHT dht(DHTPIN, DHTTYPE, 11);
+DHT dht(DHTPIN, DHTTYPE);
 
 String dataString;
 char charBuf[100];
@@ -31,6 +34,7 @@ void setup() {
   client.setServer(mqtt_server, 1883);
   client.setCallback(callback);
 
+  dht.begin();
 }
 
 void setup_wifi() {
@@ -111,6 +115,6 @@ void loop() {
   Serial.println( "Closing WiFi connection...");
   WiFi.disconnect();
   Serial.println( "Sleeping for a minute");
-  delay(60000);
+  delay(1000);
 }
 
