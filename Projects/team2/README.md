@@ -1,15 +1,24 @@
-Team 2: Smart Home System
-=========================
+Team 2: Weather Station
+=======================
 
 > Install ESP8266, NodeMCU in Arduino   
 > [https://github.com/esp8266/Arduino](https://github.com/esp8266/Arduino)
 
 # Related project
 
-- Multitask using millis()
- - Control two thing in the same time
- - URL: https://learn.adafruit.com/multi-tasking-the-arduino-part-1/overview
-- WebServerBlink Using NodeMCU
- - Using ESP8266WiFi
- - URL: https://www.hackster.io/Salman_faris_vp/webserverblink-using-nodemcu-26e1ed
+- ESP8266 Pinout
+ - URL: https://iotbytes.wordpress.com/nodemcu-pinout/
+- DTH (Temperature & Humidity) sensor
+ - [https://learn.adafruit.com/dht](https://learn.adafruit.com/dht)
+- ESP8266 Simple Weather Station
+ - Using IoStash server (MQTT)
+ - URL: [https://www.hackster.io/vsaravind007/esp8266-simple-weather-station-f0824b](https://www.hackster.io/vsaravind007/esp8266-simple-weather-station-f0824b)
+- Weather Station
+ - Using ThingSpeak server (HTTP)
+ - URL: [https://www.hackster.io/hartford-meetup/weather-station-532ff4](https://www.hackster.io/hartford-meetup/weather-station-532ff4)
 
+
+# Related code
+
+- LCD: see wee3 code
+- Connect to server week5
